@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LoginView from "./components/LoginView";
 import SwipingView from "./components/SwipingView";
 import ChatView from "./components/ChatView";
