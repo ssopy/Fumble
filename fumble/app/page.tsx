@@ -25,6 +25,7 @@ export default function Home() {
         <VitalsCard
           age={24}
           height="5'7&quot;"
+          stereotype="Gamer"
           profession="Product Designer"
           location="Brooklyn, NY"
           relationshipType="Monogamy"

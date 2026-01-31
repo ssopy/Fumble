@@ -1,4 +1,4 @@
-import { Briefcase, MapPin, Ruler, Users, Cake } from "lucide-react";
+import { Briefcase, MapPin, Ruler, Users, Cake, Drama } from "lucide-react";
 
 interface VitalsCardProps {
   age: number;
@@ -6,6 +6,7 @@ interface VitalsCardProps {
   profession: string;
   location: string;
   relationshipType: string;
+  stereotype?: string;
 }
 
 export default function VitalsCard({
@@ -14,6 +15,7 @@ export default function VitalsCard({
   profession,
   location,
   relationshipType,
+  stereotype,
 }: VitalsCardProps) {
   return (
     <div className="w-full bg-white rounded-xl p-4 flex flex-col gap-4 text-zinc-900 shadow-sm border border-zinc-100">
@@ -32,6 +34,12 @@ export default function VitalsCard({
 
       {/* List Items */}
       <div className="flex flex-col gap-4">
+        {stereotype && (
+          <div className="flex items-center gap-3">
+            <Drama size={20} className="text-zinc-900 shrink-0" />
+            <span className="text-base font-medium">{stereotype}</span>
+          </div>
+        )}
         <div className="flex items-center gap-3">
           <Briefcase size={20} className="text-zinc-900 shrink-0" />
           <span className="text-base font-medium">{profession}</span>
