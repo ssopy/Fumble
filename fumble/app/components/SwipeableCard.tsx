@@ -21,20 +21,14 @@ export default function SwipeableCard({ children, onLike, threshold = 150 }: Swi
 
   const handleDragStart = () => {
     setIsDragging(true);
-    // Vibratic feedback on start (Pattern: 10ms)
-    if (typeof navigator !== "undefined" && navigator.vibrate) {
-      navigator.vibrate(10);
-    }
+    // Vibratic feedback removed
   };
 
   const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     setIsDragging(false);
     if (info.offset.x > threshold) {
       // Swiped Right (Like)
-      // Trigger valid swipe haptic
-      if (typeof navigator !== "undefined" && navigator.vibrate) {
-        navigator.vibrate(20);
-      }
+      // Trigger valid swipe haptic removed
       if (onLike) onLike();
     }
   };
