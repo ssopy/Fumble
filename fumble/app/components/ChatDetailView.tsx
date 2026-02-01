@@ -55,6 +55,9 @@ export default function ChatDetailView({ chat, onBack, currentUserId, socket }: 
 
   useEffect(() => {
     const handleReceiveMessage = ({ from, message, timestamp, id }: { from: string; message: string; timestamp: number; id: number }) => {
+      // Only handle messages from the current chat user
+      if (from !== chat.id.toString()) return;
+
       console.log("Received message:", { from, message, timestamp });
       setMessages(prev => [...prev, {
         id: id || Date.now(),
